@@ -1,12 +1,17 @@
 "use server";
+import { BASE_API } from "@/config";
 import apiService from "@/config/api-service";
 
 export const getLead = async () => {
   try {
-    const result = await apiService.get("/leads");
+    const res = await fetch(`${BASE_API}/leads`, {
+      next: { revalidate: 0 },
+    });
 
-    if (result.data.success) {
-      return result.data.data;
+    const result = await res.json();
+
+    if (result.success) {
+      return result.data;
     }
   } catch (error) {
     console.log("Get lead error", error);

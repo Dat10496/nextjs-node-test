@@ -6,7 +6,8 @@
 
 3. `cd client` replace `.env.example` to `.env` and clear command -> run `npm install` then `npm run dev`
 
-
+## Link Production
+- Link: https://leadmanagement.vercel.app
 
 ## Frontend
 - Use `nextjs` `react-hooks-form` `shadcn/ui` `yup` `axios`
